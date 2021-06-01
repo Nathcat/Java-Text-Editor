@@ -35,7 +35,11 @@ public class TextEditor {
         editor.setFont(new Font("Monospaced", Font.PLAIN, 18));
         editor.setLineWrap(true);
 
-        root.add(editor);
+        // Make the text area scrollable
+        JScrollPane scrollPane = new JScrollPane(editor);
+        scrollPane.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
+
+        root.add(scrollPane);
 
         // Setup menu bar
         JMenu fileMenu = new JMenu("File");
